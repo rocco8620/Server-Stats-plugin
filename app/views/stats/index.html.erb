@@ -1,0 +1,23 @@
+<h1>Server stats</h1>
+
+<% @sts.each do |nome_tabella, dati| %>
+  <p>
+  <h3><%= nome_tabella %></h3>
+  <table style="border: 1px solid black; border-collapse: collapse;">
+    <thead><tr>
+    <% dati[:header].each do |he| %>
+      <th style="border: 1px solid black;"><%= he %></th> 
+    <% end %>
+    </tr></thead>
+    <tbody>
+      <% dati[:rows].each do |ro| %>
+        <tr>
+          <% ro.each do |r| %>
+            <td style="border: 1px solid black;"><%= r %></td> 
+          <% end %>
+        </tr> 
+      <% end %>
+    </tbody>
+  </table>
+  </p>
+<% end %>
